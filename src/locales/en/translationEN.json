@@ -1,0 +1,86 @@
+{
+    "navbar": {
+        "1": "John Doe"
+    },
+    "sidebar": {
+        "1": "Dashboard",
+        "2": "Client List",
+        "3": "Prediction",
+        "4": "john.doe@example.com"
+    },
+    "dashboard": {
+        "1": "Total Clients",
+        "2": "Total Revenue",
+        "3": "Potential Offers",
+        "4": "Total Sales",
+        "5-1": "$",
+        "5": 30217,
+        "6": "compared to last month"
+    },
+    "table": {
+        "1": "Top 5 Clients",
+        "2": "Client ID",
+        "3": "Client",
+        "4": "Email",
+        "5": "Recently Offered",
+        "6": "Purchased",
+        "7": "ML Model",
+        "8": "Purchased",
+        "9": "Not Purchased",
+        "10": "Predict"
+    },
+    "client": {
+        "1": "Catherine Wood",
+        "2": "Justin Purvis",
+        "3": "Jason Farrar",
+        "4": "Alison Sevilla",
+        "5": "Lisa Burkholder",
+        "1e": "cat.wood2@gmail.com",
+        "2e": "justin3049@yahoo.com",
+        "3e": "jfarrar941@gmail.com",
+        "4e": "allison0302@yahoo.com",
+        "5e": "burkhol39@gmail.com"
+    },
+    "product": {
+        "1": "Mortgage Insurance",
+        "2": "Savings Insurance",
+        "3": "Pension Insurance",
+        "4": "Child Insurance",
+        "5": "Retirement Care Insurance"
+    },
+    "piechart": {
+        "1": "Total Revenue by Products",
+        "2": "$321",
+        "3": "$295",
+        "4": "$227",
+        "5": "$258",
+        "6": "$303"
+    },
+    "charts": {
+        "1": "Number of Offers",
+        "2": "% of Products Purchased",
+        "3": "Product Offer Opportunity",
+        "4": "3 Potential Client(s)",
+        "5": "6 Potential Client(s)",
+        "6": "1 Potential Client(s)",
+        "7": "8 Potential Client(s)",
+        "8": "11 Potential Client(s)"
+    },
+    "clientInfo": {
+        "1": "Personal Information",
+        "2": "Customer ID:",
+        "3": "Age:",
+        "4": "Marital Status:",
+        "5": "Address:",
+        "6": "Profession:",
+        "7": "Level of Education",
+        "8": "Preferred form of Communication",
+        "9": "Financial Profile",
+        "10": "Annual Income:",
+        "11": "Home Owner:",
+        "12": "Monthly Housing:",
+        "13": "Credit Score:",
+        "14": "Credit Authority Level:",
+        "15": "Customer Pursuit:"
+    }
+}

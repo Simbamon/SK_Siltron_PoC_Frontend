@@ -1,0 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mainScreen{
+  display: flex;
+}
+
+.contents{
+  flex: 6;
+}
