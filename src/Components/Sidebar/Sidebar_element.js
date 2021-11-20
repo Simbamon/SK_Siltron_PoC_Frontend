@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const SideBar = styled.div`
     background: #25292C;
+    min-height: calc(100vh - 60px);
     width: 200px;
     overflow: hidden;
     @media screen and (max-width: 991px) {

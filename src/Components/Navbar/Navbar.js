@@ -46,7 +46,7 @@ export class Navbar extends Component {
                                 <ProfileName>
                                     <div style = {{display: "table-cell", verticalAlign: "middle"}}>
                                         <p style = {{fontSize: "0.85rem", lineHeight: "0.85rem"}}>{t('navbar.1')}</p>
-                                        <p style = {{fontSize: "0.65rem", lineHeight: "0.65rem"}}>Data Scientist</p>
+                                        <p style = {{fontSize: "0.65rem", lineHeight: "0.65rem"}}>Data Engineer</p>
                                     </div>
                                     <div style = {{display: "table-cell", verticalAlign: "middle"}}>
                                         <ExpandMore style = {{paddingLeft: "5px", fontSize: "1.1rem"}} />

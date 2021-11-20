@@ -41,6 +41,8 @@ export class Client1 extends Component {
         const connection_path = data_meta.attachments[0]
         const column_info = Object.keys(data_meta.entity.column_info)
         const column_table_info = data_meta.entity
+        console.log("check here")
+        console.log(column_info)
 
         this.setState({ basic_info: asset_meta, 
                         qwer: asset_meta2, 
@@ -122,7 +124,7 @@ export class Client1 extends Component {
             }
         }
 
-        console.log(asset_meta)
+        // console.log(asset_meta)
         this.setState({reviews: review_package})
         // console.log(review_package)
     }
@@ -279,14 +281,14 @@ export class Client1 extends Component {
 
 
 
-                    {/* 리뷰 work in progress */}
+                    {/* 리뷰 work in progress
                     <InfoText>리뷰</InfoText>
 
                     <AbtData>
                     <AbtSection>
                             <div style={{padding: "30px", width: "200px"}}>
                             
-                            {/* <Rating name="read-only" value={this.state.basic_info.total_ratings} readOnly size="large" /> */}
+                            <Rating name="read-only" value={this.state.basic_info.total_ratings} readOnly size="large" />
                             
                             
                             </div>
@@ -297,13 +299,13 @@ export class Client1 extends Component {
                                     <div>  
                                     <p>{review.review}</p>
                                     
-                                    {/* <Rating name="read-only" value={review.rating} readOnly size="small" /> */}
+                                    <Rating name="read-only" value={review.rating} readOnly size="small" />
                                     <p>{review.time}</p>
                                     </div>
                                 )}
                             </div>
                         </AbtSection>
-                    </AbtData>  
+                    </AbtData>   */}
                     
                     
                 

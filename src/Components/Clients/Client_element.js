@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const AssetDiv = styled.div`
     background: white;
-    padding: 0.5rem calc((100vw - 1550px) / 2);
+    padding: 0.5rem calc((100vw - 1300px) / 2);
     //Padding to resize the window
 `
 
@@ -103,7 +103,7 @@ export const Dates = styled.p`
 
 export const AbtTable = styled.table`
     //Change here for size
-    width: 900px;
+    width: 700px;
     font-size: 0.95rem;
     color: #222222;
     border-collapse: collapse;
