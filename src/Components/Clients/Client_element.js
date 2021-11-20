@@ -2,13 +2,14 @@ import styled from 'styled-components'
 
 export const AssetDiv = styled.div`
     background: white;
-    padding: 0.5rem calc((100vw - 1300px) / 2);
+    padding: 0.5rem calc((100vw - 1350px) / 2);
+    
     //Padding to resize the window
 `
 
 export const AssetTitle = styled.div`
     background: white;
-    height: 170px;
+    height: 100%;
     width: 100%;
     vertical-align: middle;
     display: table;
@@ -27,8 +28,23 @@ export const AssetTitleh1 = styled.h1 `
     flex: 1 0 50%;
     margin: auto;
     margin-bottom: 20px;
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: bold;
+    display: flex;
+`
+
+export const AssetTitleCatalogName = styled.p`
+    border: 0.1rem solid #e4e4e4;
+    background-color: #e4e4e4;
+    height: 50%;
+    font-size: 0.7rem;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1rem;
+    font-weight: normal;
+    border-radius: 3px;
+    
 `
 
 export const RequestButton = styled.button`
@@ -57,7 +73,7 @@ export const InfoText = styled.h1`
     margin: auto;
     color: #333333;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-size: 1.1rem;
     font-weight: bold;
 `

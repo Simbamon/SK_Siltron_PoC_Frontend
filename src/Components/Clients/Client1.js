@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestButton, AbtData,
+import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestButton, AbtData, AssetTitleCatalogName,
     InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable,
     ColumnInfoTable} from './Client_element'
 
@@ -21,7 +21,8 @@ export class Client1 extends Component {
             table_info: [],
             last_update_time: null,
             last_access_time: null,
-            create_time: null
+            create_time: null,
+            catalog_name: null
 
         };
     }
@@ -31,6 +32,9 @@ export class Client1 extends Component {
         const meta_response = await fetch('/getassetmeta')
         
         const data_meta = await meta_response.json()
+        const catalog_info_response = await fetch('/getcataloginfo')
+        const catalog_info = await catalog_info_response.json()
+        const catalog_name = catalog_info.entity.name
         const asset_meta = data_meta.metadata
         const asset_meta2 = data_meta.metadata.usage
         const asset_meta3 = data_meta.entity.data_asset
@@ -50,7 +54,8 @@ export class Client1 extends Component {
                         data_business_term: data_biz_term,
                         data_classification: data_classiicate,
                         connection_path: connection_path,
-                        column_name: column_info
+                        column_name: column_info,
+                        catalog_name: catalog_name
                     })
 
         function timeConverter(time){
@@ -135,7 +140,10 @@ export class Client1 extends Component {
                 <AssetTitle>
                     <AssetTitleWrapper>
                         <div style={{display: "flex", justifyContent: "space-between"}}>
-                            <AssetTitleh1>{this.state.basic_info.name}</AssetTitleh1>
+                            <AssetTitleh1>
+                                {this.state.basic_info.name}
+                                <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
+                            </AssetTitleh1>
                             <RequestButton>사용 신청</RequestButton>
                         </div>
                         <p>{this.state.basic_info.description}</p> 

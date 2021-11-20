@@ -17,7 +17,7 @@ export class Navbar extends Component {
             <>
                 <Nav>
                     <NavLink to="/dashboard">
-                        <h1>IBM Customer Offer Affinity</h1>
+                        <h3>SK 실트론 데이터 카탈로그</h3>
                     </NavLink>
                     <NavMenu>
                         {/* <NavLink>
