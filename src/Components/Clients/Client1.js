@@ -1,153 +1,315 @@
 import React, { Component } from 'react'
-import { ClientWrap, ClientTitle, ClientBoxWrapper, ClientBox, Client, ClientPic, ClientName, ClientInfo, ClientBox2, PieChart } from './Client_element'
-import { withTranslation } from 'react-i18next';
-import Client1KR from '../../images/client1KR.jpg';
-import Client1EN from '../../images/client1EN.jpg';
-import { Bar } from 'react-chartjs-2'
+import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestButton, AbtData,
+    InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable,
+    ColumnInfoTable} from './Client_element'
 
 export class Client1 extends Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true,
+            basic_info: [],
+            reviews: [],
+            data_format: [],
+            data_business_term: [],
+            data_classification: [],
+            connection_source: [],
+            connection_source_type: [],
+            connection_path: [],
+            column_name: [],
+            users: [],
+            table_info: [],
+            last_update_time: null,
+            last_access_time: null,
+            create_time: null
 
-        const { t } = this.props;
+        };
+    }
+
+    async componentDidMount() {
         
-        return (
-            <>
-                <ClientWrap>
-                    <ClientTitle>
-                        Client
-                    </ClientTitle>
-                    <ClientBoxWrapper>
-                        <ClientBox>
-                            <Client>
-                                <div>
-                                <ClientPic img = {localStorage.getItem('i18nextLng')==="ko" ?Client1KR : Client1EN} alt='discovery workshop'></ClientPic>
-                                <ClientName>{t('client.1')}</ClientName>
-                                <ClientInfo>
-                                <thead>
-                                    <caption>{t('clientInfo.1')}</caption>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{t('clientInfo.2')}</td>
-                                        <td>1024</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.3')}</td>
-                                        <td>36세</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.4')}</td>
-                                        <td>미혼</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.5')}</td>
-                                        <td>서울특별시 송파구</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.6')}</td>
-                                        <td>간호사</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.7')}</td>
-                                        <td>학사</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.8')}</td>
-                                        <td>이메일</td>
-                                    </tr>
-                                </tbody>
-                                
-                                </ClientInfo>
-                                <ClientInfo>
-                                <thead>
-                                    <caption>{t('clientInfo.9')}</caption>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{t('clientInfo.10')}</td>
-                                        <td>48,000,000원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.11')}</td>
-                                        <td>있음</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.12')}</td>
-                                        <td>895,000원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.13')}</td>
-                                        <td>668점</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.14')}</td>
-                                        <td>3등급</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{t('clientInfo.15')}</td>
-                                        <td>자금 확보</td>
-                                    </tr>
-                                </tbody>
-                                
-                                </ClientInfo>
-                                </div>
-                                
-                                
+        const meta_response = await fetch('/getassetmeta')
+        
+        const data_meta = await meta_response.json()
+        const asset_meta = data_meta.metadata
+        const asset_meta2 = data_meta.metadata.usage
+        const asset_meta3 = data_meta.entity.data_asset
 
-                            </Client>
-                        </ClientBox>
-                        <ClientBox2>
-                        <PieChart>
+        const data_biz_term = data_meta.entity.asset_terms.list
+        
+        const data_classiicate = data_meta.entity.data_profile.data_classification_manual
+        const connection_path = data_meta.attachments[0]
+        const column_info = Object.keys(data_meta.entity.column_info)
+        const column_table_info = data_meta.entity
+
+        this.setState({ basic_info: asset_meta, 
+                        qwer: asset_meta2, 
+                        data_format: asset_meta3,
+                        data_business_term: data_biz_term,
+                        data_classification: data_classiicate,
+                        connection_path: connection_path,
+                        column_name: column_info
+                    })
+
+        function timeConverter(time){
+            let dateObject = new Date(time)
+            let month = dateObject.getMonth(time) + 1
+            let year = dateObject.getFullYear()
+            let date = dateObject.getDate()
+
+            return `${year}년 ${month}월 ${date}일`
+        }
+
+        const last_updated_time = timeConverter(asset_meta2.last_update_time)
+        const last_accessed_time = timeConverter(asset_meta2.last_access_time)
+        const created_time = timeConverter(asset_meta.created)
+
+        this.setState({last_update_time: last_updated_time,
+                       last_access_time: last_accessed_time,
+                       create_time: created_time})
+        
+        const result = []
+        column_info.forEach(function(map) {
+            try {
+                const column_desc = column_table_info.column_info[map].column_description
+                const column_tgs = column_table_info.column_info[map].column_tags
+                const column_biz_terms = column_table_info.column_info[map].column_terms[0].term_display_name
+                const obj = {
+                    column_info: map,
+                    desc: column_desc,
+                    tag: column_tgs,
+                    bizterm: column_biz_terms
+                }
+                result.push(obj) 
+            } catch (error) {
+                // console.log(error)
+            }
+        });
+
+        this.setState({table_info: result})
+
+        const connection_response = await fetch('/getconnection')
+        const data_connection = await connection_response.json()
+        const connection_source = data_connection.entity
+        const connection_source_type = data_connection.entity.properties
+        this.setState({ connection_source: connection_source,
+                        connection_source_type: connection_source_type})
+        
+
+        const review_response= await fetch('/getassetreview')
+        const data = await review_response.json()
+        const review_array = await data.resources
+        
+        const review_package = []
+
+        for(var i = 0; i < review_array.length; i++){
+            try {
+                const rating = review_array[i].entity.rating
+                const review = review_array[i].entity.review
+                const time_data = new Date(review_array[i].metadata.updated_at)
+                const time = time_data.getFullYear() + "년 " +
+                             (time_data.getMonth() + 1) + "월 " +
+                             time_data.getDate() + "일"
+                const obj = {
+                    rating: rating,
+                    review: review,
+                    time: time
+                }
+                review_package.push(obj)
+                
+            } catch (error) {
+                // console.log(error)
+            }
+        }
+
+        console.log(asset_meta)
+        this.setState({reviews: review_package})
+        // console.log(review_package)
+    }
+    
+    render() {
+        return (
+            <AssetDiv>
+                <AssetTitle>
+                    <AssetTitleWrapper>
+                        <div style={{display: "flex", justifyContent: "space-between"}}>
+                            <AssetTitleh1>{this.state.basic_info.name}</AssetTitleh1>
+                            <RequestButton>사용 신청</RequestButton>
+                        </div>
+                        <p>{this.state.basic_info.description}</p> 
+                    </AssetTitleWrapper>
+                </AssetTitle>
+                
+                    <InfoText>데이터 정보</InfoText>
+                    <AbtData>
+                        <AbtSection>
+                            <UpdateSection>
+                            <p style={{fontSize: "1.0rem", color: "#565656"}}>
+                            마지막 업데이트
+                            </p>
+                            <p style={{fontSize: "1.7rem", color: "#1c6387", fontWeight: "bold", marginTop: "1.2px", marginBottom: "1.2px"}}>
+                            {this.state.last_update_time}
+                            </p>
+                            
+                            <div style={{display: "flex", justifyContent: "space-between", marginTop: "7px"}}>
+                                <div>
+                                    <DateDescription>최신수정일자</DateDescription>
+                                    <Dates>{this.state.last_update_time}</Dates>
+                                </div>
+                                <div>
+                                    <DateDescription>최신접근일자</DateDescription>
+                                    <Dates>{this.state.last_access_time}</Dates>
+                                    
+
+                                </div>
+                            </div>
+                            <div style={{marginTop: "11px"}}>
+                                <DateDescription>공개일자 </DateDescription>
+                                <Dates>{this.state.create_time}</Dates>
+                            </div>
+                            
+                            </UpdateSection>
+
+                            <AbtInfoSection>
+                            <p style={{fontSize: "1rem", color: "#565656", fontWeight: "bold", paddingBottom: "15px"}}>
+                                데이터 개요
+                            </p>
+
+                            <AbtTable>
+                                <tbody>
+                                    <tr>
+                                        <td>포맷</td>
+                                        <td>{this.state.data_format.mime_type}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>태그</td>
+                                        <td>{this.state.basic_info.tags}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>카테고리</td>
+                                        <td>{this.state.basic_info.asset_category}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>용량</td>
+                                        <td>{this.state.basic_info.size / 1000} KB</td>
+                                    </tr>
+                                </tbody>
+                            </AbtTable>
+                            <p style={{fontSize: "1rem", color: "#565656", fontWeight: "bold", paddingBottom: "15px"}}>
+                                거버넌스 아티팩트
+                            </p>
+                            <AbtTable>
+                                <tbody>
+                                    <tr>
+                                        <td>비즈니스 용어</td>
+                                        <td>
+                                            아래를 비즈니스 텀 추가할껏
+                                            {/* {this.state.data_business_term.map((bizTerm, index) => 
+                                            <span key={index}>
+                                                <span>{ (index ? ', ' : '') + bizTerm.term_display_name}</span>
+                                            </span>)} */}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>정보 분류</td>
+                                        <td>{this.state.data_classification.map((classificate, index) => 
+                                            <span key={index}>
+                                                <span>{ (index ? ', ' : '') + classificate.name}</span>
+                                            </span>)}
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </AbtTable>
+                            <p style={{fontSize: "1rem", color: "#565656", fontWeight: "bold", paddingBottom: "15px"}}>
+                                데이터베이스 접속정보
+                            </p>
+                            <AbtTable>
+                                <tbody>
+                                    <tr>
+                                        <td>데이터 소스</td>
+                                        <td>{this.state.connection_source.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>데이터 소스 유형</td>
+                                        <td><span style={{ textTransform: 'uppercase'}}>{this.state.connection_source_type.database}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접속 경로</td>
+                                        <td>{this.state.connection_path.connection_path}</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </AbtTable>
+                            </AbtInfoSection>
+                        </AbtSection>
+                    </AbtData>
+
+
+
+                    <InfoText>데이터 컬럼 정보</InfoText>
+                    
+                    <ColumnInfoTable>
                         <thead>
-                                <caption>제품 추천</caption>
-                                <tr>
-                                    <th>
-                                    <Bar
-                                        data = {{labels: [t('product.1'), t('product.2'), t('product.3'), t('product.4'), t('product.5')],
-                                        datasets: [{data: [91, 87, 65, 31, 22],
-                                                        barThickness: 40,
-                                                        backgroundColor: ['#00A6FF']}]}}
-                                        options = {{
-                                                    plugins: {
-                                                        legend: {
-                                                            display: false
-                                                        },
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function(context) {
-                                                                    var label = context.dataset.label || '';
-                                                                    label += new Intl.NumberFormat('en-US', { style: 'percent' }).format(context.parsed.x/100);
-                                                                    return label;
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                    indexAxis: 'y',
-                                                    scales: {
-                                                        x: {
-                                                            suggestedMax: 100,
-                                                            ticks: {
-                                                                callback: function(value) {
-                                                                    return value+"%"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                    }}
-                                        labels = {{ render: 'value'}}
-                                        />
-                                    </th>
-                                </tr>
+                            <tr>
+                                <th>컬럼 이름</th>
+                                <th>비즈니스 용어</th>
+                                <th>태그</th>
+                                <th>설명</th>
+                            </tr>
                         </thead>
-                        </PieChart>
-                        
-                        
-                        </ClientBox2>
-                    </ClientBoxWrapper>
-                </ClientWrap>
-            </>
+                        <tbody>
+                            {this.state.table_info.map(info => 
+                                <tr>
+                                    <td>{info.column_info}</td>
+                                    <td>{info.bizterm}</td>
+                                    <td>{info.tag}</td>
+                                    <td>{info.desc}</td>
+                                </tr>
+                            )}
+                            
+                        </tbody>
+                    </ColumnInfoTable>
+
+
+
+
+
+
+
+
+
+                    {/* 리뷰 work in progress */}
+                    <InfoText>리뷰</InfoText>
+
+                    <AbtData>
+                    <AbtSection>
+                            <div style={{padding: "30px", width: "200px"}}>
+                            
+                            {/* <Rating name="read-only" value={this.state.basic_info.total_ratings} readOnly size="large" /> */}
+                            
+                            
+                            </div>
+
+                            <div style={{padding: "30px"}}>
+
+                                {this.state.reviews.map(review => 
+                                    <div>  
+                                    <p>{review.review}</p>
+                                    
+                                    {/* <Rating name="read-only" value={review.rating} readOnly size="small" /> */}
+                                    <p>{review.time}</p>
+                                    </div>
+                                )}
+                            </div>
+                        </AbtSection>
+                    </AbtData>  
+                    
+                    
+                
+            </AssetDiv>
         )
     }
 }
 
-export default withTranslation()(Client1)
+export default Client1

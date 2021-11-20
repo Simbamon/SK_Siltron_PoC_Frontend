@@ -1,22 +1,23 @@
 import styled from 'styled-components'
 
 export const SideBar = styled.div`
-    min-height: calc(100vh - 50px);
-    height: 100%;
+    background: #25292C;
     width: 200px;
-
+    overflow: hidden;
     @media screen and (max-width: 991px) {
         display: none;
     }
 `
 
 export const SidebarWrapper = styled.div `
+    top: 0;
+    left: 0;
+    bottom: 0;
     padding: 20px;
     color : #555;
-
+    height: 100%;
 `
 export const ProfileSection = styled.div `
-    height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${props => props.img});
     background-size: cover;
@@ -54,12 +55,13 @@ export const SidebarListItem = styled.li `
     padding: 5px;
     display: flex;
     align-items: center;
+    color: white;
     
     justify-content: space-between;
 
     &:hover {
     transition: all 0.3s ease-out;
-    background-color: #1c2237;
-    color: #FFF;
+    background-color: white;
+    color: black;
     }
 `

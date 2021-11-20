@@ -28,7 +28,7 @@ export class Dashboard extends Component {
         return (
             <>
             <DashboardWrap>
-                
+                <div style={{padding: "25px"}}>
                 <DashboardTitle>
                 {t('sidebar.1')}
                 </DashboardTitle>
@@ -491,6 +491,7 @@ export class Dashboard extends Component {
                             </tbody>
                         </BarGraph>
                     </Graphs>
+                </div>
             </DashboardWrap>
                 
             </>

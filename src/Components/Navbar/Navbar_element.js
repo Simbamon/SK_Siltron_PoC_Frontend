@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
-    background: white;
-    height: 50px;
+    background: #25292C;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     z-index: 10;
 `
 
 export const NavLink = styled.div `
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     text-decoration: none;

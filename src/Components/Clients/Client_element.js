@@ -1,140 +1,159 @@
 import styled from 'styled-components'
 
-export const ClientWrap = styled.div`
-    background-color: #F3F3F4;
-    min-height: calc(100vh - 50px);
-    height: 100%;
-    padding: 25px;
+export const AssetDiv = styled.div`
+    background: white;
+    padding: 0.5rem calc((100vw - 1550px) / 2);
+    //Padding to resize the window
 `
 
-export const ClientTitle = styled.div`
-    padding: 10px;
-    font-size: 1.7rem;
-    font-weight: bold;
-    line-height: 1.7rem;
-`
-
-export const ClientBoxWrapper = styled.div`
+export const AssetTitle = styled.div`
+    background: white;
+    height: 170px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-`
-
-export const ClientBox = styled.div`
-    flex: 1 1 calc(30% - 50px);
-    margin : 10px;
-    padding: 15px;
-    min-height: 75vh;
-    height: 100%;
-    border-radius: 10px;
-    white-space: nowrap;
-    background-color: white;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
-    
-`
-
-export const Client = styled.div`
-    display: flex;
-    justify-content: center;
-    text-align: center;
-`
-
-export const ClientPic = styled.div`
-    background-image: url(${props => props.img});
-    background-size: cover;
-    width: 200px;
-    border-radius: 15%;
-    height: 200px;
-    text-decoration: none;
-    margin: 5px auto;
-`
-
-export const ClientName = styled.h1`
-    font-size: 1.8rem;
-    padding: 1.2rem;
-    line-height: 1.8rem;
-`
-
-export const ClientInfo = styled.table`
-    border-radius: 10px;
-    white-space: nowrap;
-    background-color: white;
-    text-align: left;
-    font-size: 0.85rem;
-    line-height: 1.1rem;
-    width: 100%;
-    table-layout: fixed;
+    vertical-align: middle;
     display: table;
-    margin-bottom: 25px;
-    border-collapse: collapse;
-    overflow-x:auto;
-    /* box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36); */
-
-    caption {
-        display: flex;
-        align-items: center;
-        font-size: 1.1rem;
-        font-weight: bold;
-        padding: 5px 0 5px 20px;
-        line-height: 1.1rem;
-        
-    }
-
-    tbody tr td:first-child {
-        text-align: left;
-    }
-    tbody tr td:nth-child(2) {
-        text-align: right;
-    }
-    td  {
-        padding: 3px 20px;
-        height: 100%;
-        
-    }
-    
+    margin-top: 25px;
+    margin-bottom: 15px;
 `
-export const ClientBox2 = styled.div`
-    flex: 1 1 calc(70% - 50px);
-    margin : 10px;
-    padding: 15px;
-    min-height: 75vh;
+
+export const AssetTitleWrapper = styled.div`
+    background: white;
+    vertical-align: middle;
     height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    white-space: nowrap;
-    background-color: white;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
-    display: grid;
-    
-    @media screen and (max-width: 500px) {
-        height: 40vh;
-    }
+    display: table-cell;
 `
 
-export const PieChart = styled.table`
+export const AssetTitleh1 = styled.h1 `
+    flex: 1 0 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 2.1rem;
+    font-weight: bold;
+`
+
+export const RequestButton = styled.button`
+
+    background: #0062FF;
     white-space: nowrap;
-    background-color: white;
+    color: #fff;
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+
+    &:hover {
+        transition: all 0.3s ease-out;
+        border: none;
+        background: white;
+        color: black;
+    }
+
+`
+
+export const InfoText = styled.h1`
+    margin: auto;
+    color: #333333;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+`
+
+export const AbtData = styled.div`
+    display: flex;
     flex-direction: row;
     flex-direction: column;
-    font-size: 0.85rem;
     height: 100%;
     width: 100%;
     display: table;
-    table-layout: fixed;
+    border: 1px solid grey;
+    box-shadow:1px 1px 1px 1px grey;
+    margin-top: 15px;
+    margin-bottom: 50px;
+`
+
+export const AbtSection = styled.div`
+    display: flex;
+`
+
+export const UpdateSection = styled.div`
+    padding: 20px;
+`
+
+export const AbtInfoSection = styled.div`
+    padding: 20px;
+`
+
+export const DateDescription = styled.p`
+    color: #565656;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 3px;
+`
+
+export const Dates = styled.p`
+    color: #565656;
+    font-size: 0.9rem;
+    margin-right: 17px;
+`
+
+export const AbtTable = styled.table`
+    //Change here for size
+    width: 900px;
+    font-size: 0.95rem;
+    color: #222222;
+    border-collapse: collapse;
+    tbody tr td:first-child {
+        width: 150px;
+    }
+    td {
+        padding: 2px 10px;
+        border-top: 1px solid #c8c8c8;
+        border-bottom: 1px solid #c8c8c8
+    }
+    tr {
+    :nth-of-type(odd) {
+      background-color: #efefef;
+    }
+    
+  }
+  margin-bottom: 28px;
+`
+
+export const ColumnInfoTable = styled.table`
+    flex-direction: row;
+    flex-direction: column;
+    text-align: left;
+    font-size: 0.8rem;
+    height: 100%;
+    width: 100%;
+    display: table;
+    border: 1px solid grey;
+    box-shadow:1px 1px 1px 1px grey;
     margin-top: 15px;
     margin-bottom: 25px;
+    table-layout: fixed;
 
-    caption {
-        display: inline;
-        font-size: 1.1rem;
+    border-collapse: collapse;
+    thead tr th {
+        border: none;
         font-weight: bold;
-        padding: 0 0 0 20px;
-        line-height: 45px;
+        
     }
-    th {
-        max-height: 500px;
+    tbody tr td:first-child {
+        /* width: 150px; */
+        color: #1c6387;
+
     }
+    th, td  {
+        padding: 3px 15px;
+        border-top: 1px solid #c8c8c8;
+        border-bottom: 1px solid #c8c8c8;
+        height: 39px;
+    }
+  margin-bottom: 50px;
 `

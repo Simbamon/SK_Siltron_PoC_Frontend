@@ -20,7 +20,7 @@ export class Navbar extends Component {
                         <h1>IBM Customer Offer Affinity</h1>
                     </NavLink>
                     <NavMenu>
-                        <NavLink>
+                        {/* <NavLink>
                             <LanguageBox onChange={onChange}>
                                 {localStorage.getItem('i18nextLng')==="ko" ? (
                                     <option selected disabled hidden>한국어</option>
@@ -30,7 +30,7 @@ export class Navbar extends Component {
                                 <option value="ko">한국어</option>
                                 <option value="en">English</option>
                             </LanguageBox>
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink>
                             <Search style = {{fontSize: "1.35rem"}}/>
                         </NavLink>

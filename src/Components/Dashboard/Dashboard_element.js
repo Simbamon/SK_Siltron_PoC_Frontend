@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
 export const DashboardWrap = styled.div`
-    background-color: #F3F3F4;
     min-height: calc(100vh - 50px);
     height: 100%;
-    padding: 25px;
 `
 
 export const DashboardTitle = styled.div`
@@ -30,7 +28,7 @@ export const BoxItem = styled.div`
     border-radius: 10px;
     white-space: nowrap;
     background-color: white;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
+    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.26);
 `
 
 export const BoxTrend = styled.div`
@@ -67,7 +65,7 @@ export const DashboardTable = styled.table`
     margin-bottom: 25px;
     border-collapse: collapse;
     overflow-x:auto;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
+    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.26);
 
     caption {
         display: inline;
@@ -165,7 +163,7 @@ export const PieChart = styled.table`
     border-radius: 10px;
     white-space: nowrap;
     background-color: white;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
+    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.26);
     flex-direction: row;
     flex-direction: column;
     text-align: left;
@@ -212,7 +210,7 @@ export const BarGraph = styled.table`
     border-radius: 10px;
     white-space: nowrap;
     background-color: white;
-    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.36);
+    box-shadow: 13px 15px 55px -13px rgba(0,0,0,0.26);
     flex-direction: row;
     flex-direction: column;
     text-align: left;
