@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { DashboardWrap, DashboardTitle, BoxInfo, BoxItem, BoxTrend, TopFive, DashboardTable, 
-         Purchase, Predict, PieChart, Graphs, BarGraph, Potential, CatalogItem, CatalogWrapper } from './Dashboard_element'
+         Purchase, CatalogPicture, CatalogName, PieChart, Graphs, BarGraph, Potential, CatalogItem, CatalogWrapper } from './Dashboard_element'
 import { ArrowDownward, ArrowUpward, Person, ShowChart, QuestionAnswer, Assignment } from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
 import { Stop } from '@material-ui/icons'
@@ -141,7 +141,8 @@ export class Dashboard extends Component {
                                     <CatalogWrapper>
                                         <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
                                             <CatalogItem>
-                                                <Person style={{color: "blue", fontSize: "4.2rem"}}/>
+                                                <CatalogPicture src={require('../../images/factory.svg').default} alt='factory'/>
+                                                <CatalogName>고객 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
                                         <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>

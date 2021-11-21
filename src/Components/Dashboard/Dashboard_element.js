@@ -100,7 +100,7 @@ export const DashboardTable = styled.table`
     }
     th {
         padding: 5px 20px;
-        height: 30px;
+        height: 35px;
         border-bottom: 1px solid #c8c8c8;
     }
     td  {
@@ -116,12 +116,30 @@ export const CatalogWrapper = styled.div`
 `
 
 export const CatalogItem = styled.div`
-    border: 1px solid black;
+    border: solid black;
+    border-radius: 5px;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
     text-align: center;
 
+`
+
+export const CatalogPicture = styled.img`
+    max-width: 90%;
+    min-height: 150px;
+    
+    &:hover {
+        transition: all 0.3s ease-out;
+        max-width: 100%;
+    }
+`
+
+export const CatalogName = styled.h1`
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `
 
 export const Client = styled.div`
