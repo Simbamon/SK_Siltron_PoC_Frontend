@@ -111,6 +111,19 @@ export const DashboardTable = styled.table`
     
 `
 
+export const CatalogWrapper = styled.div`
+    display: flex;
+`
+
+export const CatalogItem = styled.div`
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+
+`
+
 export const Client = styled.div`
     display: flex;
     

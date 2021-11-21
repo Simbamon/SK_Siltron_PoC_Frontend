@@ -63,8 +63,7 @@ export const RequestButton = styled.button`
     &:hover {
         transition: all 0.3s ease-out;
         border: none;
-        background: white;
-        color: black;
+        background: #0245b0;
     }
 
 `

@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-import {Nav, NavLink, NavMenu, ProfilePic, Profile, ProfileName, LanguageBox} from './Navbar_element'
+import {Nav, NavLink, NavMenu, ProfilePic, Profile, ProfileName } from './Navbar_element'
 import { Email, NotificationsNoneOutlined, ExpandMore, Search } from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
-import i18next from 'i18next';
 
 
 export class Navbar extends Component {
     render() {
         const { t } = this.props;
-
-        const onChange = (event) =>{
-            i18next.changeLanguage(event.target.value)
-        }
 
         return (
             <>
@@ -20,17 +15,6 @@ export class Navbar extends Component {
                         <h3>SK 실트론 데이터 카탈로그</h3>
                     </NavLink>
                     <NavMenu>
-                        {/* <NavLink>
-                            <LanguageBox onChange={onChange}>
-                                {localStorage.getItem('i18nextLng')==="ko" ? (
-                                    <option selected disabled hidden>한국어</option>
-                                ) : (
-                                    <option selected disabled hidden>English</option>
-                                )}
-                                <option value="ko">한국어</option>
-                                <option value="en">English</option>
-                            </LanguageBox>
-                        </NavLink> */}
                         <NavLink>
                             <Search style = {{fontSize: "1.35rem"}}/>
                         </NavLink>

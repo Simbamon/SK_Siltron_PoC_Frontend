@@ -104,9 +104,29 @@ export const AssetTitleCatalogName = styled.p`
     
 `
 
+export const SortBy = styled.div`
+    vertical-align: middle;
+    display: table;
+`
+
 export const DataType = styled.p`
     color: #565656;
     font-size: 0.8rem;
+`
+
+export const SortByBox = styled.div`
+    margin-left: 10px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    line-height: 1rem;
+    background: #e4e4e4;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+    transition: all 0.3s ease-out;
+    background-color: #b6b6b6;
+    }
 `
 
 export const AssetSummary = styled.p`
@@ -143,4 +163,9 @@ export const ReviewAmounts = styled.p`
     font-size: 0.75rem;
     font-weight: 400;
     margin-left: 10px;
+
+    &:hover {
+        border-bottom: 1px solid black;
+        cursor: pointer;
+    }
 `

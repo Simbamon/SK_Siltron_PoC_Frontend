@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { DashboardWrap, DashboardTitle, BoxInfo, BoxItem, BoxTrend, TopFive, DashboardTable, 
-         Purchase, Predict, PieChart, Graphs, BarGraph, Potential } from './Dashboard_element'
+         Purchase, Predict, PieChart, Graphs, BarGraph, Potential, CatalogItem, CatalogWrapper } from './Dashboard_element'
 import { ArrowDownward, ArrowUpward, Person, ShowChart, QuestionAnswer, Assignment } from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
 import { Stop } from '@material-ui/icons'
-import { Doughnut, Bar } from 'react-chartjs-2'
+import { Pie, Bar } from 'react-chartjs-2'
 import { Link } from 'react-router-dom'
 import CountUp from 'react-countup'
 
@@ -137,14 +137,38 @@ export class Dashboard extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <div>
-                                    <Link to="dashboard/prediction/1024" style={{ textDecoration: 'none' }}>
-                                        <Predict>{t('table.10')}</Predict>
-                                    </Link>
-                                </div>
-                                <div>
-                                    asdfdsf
-                                </div>
+                                <td>
+                                    <CatalogWrapper>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                            <CatalogItem>
+                                                <Person style={{color: "blue", fontSize: "4.2rem"}}/>
+                                            </CatalogItem>
+                                        </Link>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                            <CatalogItem>
+                                            asdf
+                                            </CatalogItem>
+                                        </Link>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                            <CatalogItem>
+                                            asdf
+                                            </CatalogItem>
+                                        </Link>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                            <CatalogItem>
+                                            asdf
+                                            </CatalogItem>
+                                        </Link>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                            <CatalogItem>
+                                            asdf
+                                            </CatalogItem>
+                                        </Link>
+                                    </CatalogWrapper>
+                                    <div>
+                                        
+                                    </div>
+                                </td>
                             </tbody>
                             
                                         
@@ -155,8 +179,8 @@ export class Dashboard extends Component {
                                 <caption>{t('piechart.1')}</caption>
                                 <tr>
                                     <th>
-                                    <Doughnut
-                                        data ={{labels: [t('product.1'), t('product.2'), t('product.3'), t('product.4'), t('product.5')],
+                                    <Pie
+                                        data ={{labels: ["삼성전자", "인텔", "AMD", "Qualcomm", "엔비디아"],
                                                 datasets: [{data: [10, 6, 5, 6, 7],
                                                 backgroundColor: ['#00A6FF', '#28A745', '#DC3545', '#FFC107', '#8107FF']}]}}
                                         options={{plugins: {
@@ -164,7 +188,7 @@ export class Dashboard extends Component {
                                                             display: false
                                                         }
                                                   },
-                                                  maintainAspectRatio: false, cutout: 70}}
+                                                  maintainAspectRatio: false}}
                                         />
                                     </th>
                                 </tr>
@@ -177,7 +201,7 @@ export class Dashboard extends Component {
                                             <Stop style = {{paddingRight: "1px", color: "#00A6FF", fontSize: "0.8rem"}} />
                                         </Purchase>
                                         <Purchase>
-                                        {t('product.1')}
+                                        삼성전자
                                         </Purchase>
                                         </div>
                                         {t('piechart.2')}
@@ -190,7 +214,7 @@ export class Dashboard extends Component {
                                             <Stop style = {{paddingRight: "1px", color: "#28A745", fontSize: "0.8rem"}} />
                                         </Purchase>
                                         <Purchase>
-                                        {t('product.2')}
+                                        인텔
                                         </Purchase>
                                         </div>
                                         {t('piechart.3')}
@@ -203,7 +227,7 @@ export class Dashboard extends Component {
                                             <Stop style = {{paddingRight: "1px", color: "#DC3545", fontSize: "0.8rem"}} />
                                         </Purchase>
                                         <Purchase>
-                                        {t('product.3')}
+                                        AMD
                                         </Purchase>
                                         </div>
                                         {t('piechart.4')}
@@ -216,7 +240,7 @@ export class Dashboard extends Component {
                                             <Stop style = {{paddingRight: "1px", color: "#FFC107", fontSize: "0.8rem"}} />
                                         </Purchase>
                                         <Purchase>
-                                        {t('product.4')}
+                                        Qualcomm
                                         </Purchase>
                                         </div>
                                         {t('piechart.5')}
@@ -229,7 +253,7 @@ export class Dashboard extends Component {
                                             <Stop style = {{paddingRight: "1px", color: "#8107FF", fontSize: "0.8rem"}} />
                                         </Purchase>
                                         <Purchase>
-                                        {t('product.5')}
+                                        엔비디아
                                         </Purchase>
                                         </div>
                                         {t('piechart.6')}
@@ -242,13 +266,13 @@ export class Dashboard extends Component {
                     <Graphs>
                         <BarGraph>
                             <thead>
-                                <caption>{t('charts.1')}</caption>
+                                <caption>2021년 생산량</caption>
                                 <tr>
                                     <th>
                                     <Bar
-                                        data = {{labels: [t('product.1'), t('product.2'), t('product.3'), t('product.4'), t('product.5')],
-                                                datasets: [{data: [402, 404, 354, 590, 594],
-                                                            barThickness: 40,
+                                        data = {{labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월","8월", "9월", "10월", "11월", "12월"],
+                                                datasets: [{data: [302, 305, 401, 190, 390, 601, 720, 402, 404, 354, 810, 594],
+                                                            barThickness: 20,
                                                             backgroundColor: ['#00A6FF']}]}}
                                         options = {{ plugins: {
                                                         legend: {
@@ -272,7 +296,7 @@ export class Dashboard extends Component {
                                 <tr>
                                     <th>
                                     <Bar
-                                        data = {{labels: [t('product.1'), t('product.2'), t('product.3'), t('product.4'), t('product.5')],
+                                        data = {{labels: ["7월", "8월", "9월", "10월", "11월"],
                                                 datasets: [{data: [38, 63, 27, 85, 72],
                                                             barThickness: 40,
                                                             backgroundColor: ['#FFC107']}]}}

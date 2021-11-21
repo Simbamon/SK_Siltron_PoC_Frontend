@@ -29,11 +29,11 @@ export class Client1 extends Component {
 
     async componentDidMount() {
         
-        const meta_response = await fetch('/getassetmeta')
-        
-        const data_meta = await meta_response.json()
         const catalog_info_response = await fetch('/getcataloginfo')
         const catalog_info = await catalog_info_response.json()
+        const meta_response = await fetch('/getassetmeta')
+        const data_meta = await meta_response.json()
+        
         const catalog_name = catalog_info.entity.name
         const asset_meta = data_meta.metadata
         const asset_meta2 = data_meta.metadata.usage

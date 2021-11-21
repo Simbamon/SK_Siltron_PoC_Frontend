@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { AssetListDiv, AssetListTop, FilterBox, SearchBar, CatalogName, AssetListTable, ReviewAmounts,
+import { AssetListDiv, AssetListTop, FilterBox, SearchBar, CatalogName, AssetListTable, ReviewAmounts, SortBy, SortByBox,
          AssetName, AssetTitleCatalogName, AssetSummary, DataType, AssetOwner, AssetOwnerName, LastUpdated } from './Asset_list_element'
-import { Search, Storage } from '@material-ui/icons'
+import { Search, Storage, ExpandMore } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 
@@ -85,7 +85,24 @@ export class Asset_list extends Component {
                         </div>
                         <FilterBox>
                             <p style={{fontSize: "0.9rem", marginTop: "15px"}}>전체 <span style={{fontWeight: "bold", fontSize: "0.9rem"}}>{this.state.total_number_of_asset}</span>건의 데이터가 있습니다.</p>
-                            <p>asdf</p>
+                            <div style={{display: "flex", marginTop: "15px"}}>
+                                
+                                <SortBy>
+                                    <div style = {{display: "table-cell", verticalAlign: "middle"}}>
+                                        <p style = {{fontSize: "0.85rem", lineHeight: "1rem"}}>정렬: </p>
+                                    </div>
+                                    <SortByBox>
+                                        <div style = {{display: "table-cell", verticalAlign: "middle"}}>
+                                            <p style = {{fontSize: "0.85rem", lineHeight: "0.85rem"}}>마지막 업데이트</p>
+                                        </div>
+                                        <div style = {{display: "table-cell", verticalAlign: "middle"}}>
+                                            <ExpandMore style = {{paddingLeft: "5px", fontSize: "1.1rem"}} />
+                                        </div>
+                                    </SortByBox>
+                                    
+                                </SortBy>
+                                
+                            </div>
                         </FilterBox>
                     </AssetListTop>
 

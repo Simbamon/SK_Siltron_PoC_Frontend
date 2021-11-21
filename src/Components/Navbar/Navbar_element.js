@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
-    background: #25292C;
+    background: rgb(20, 20, 20);
     height: 60px;
     display: flex;
     justify-content: space-between;
