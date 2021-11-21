@@ -1,86 +1,89 @@
 {
     "navbar": {
-        "1": "John Doe"
+        "1": "홍길동"
     },
-    "sidebar": {
-        "1": "Dashboard",
-        "2": "Client List",
-        "3": "Prediction",
-        "4": "john.doe@example.com"
+    "sidebar":{
+        "1": "대시보드",
+        "2": "클라이언트",
+        "3": "예측모델",
+        "4": "gildong.hong@partner.sk.com"
     },
     "dashboard": {
-        "1": "Total Clients",
-        "2": "Total Revenue",
-        "3": "Potential Offers",
-        "4": "Total Sales",
-        "5-1": "$",
-        "5": 30217,
-        "6": "compared to last month"
+        "1": "총 클라이언트 수",
+        "2": "총 수익",
+        "3": "포테셜 오퍼",
+        "4": "총 판매량",
+        "5-2": 8764,
+        "5-3": 122,
+        "5-4": 1521,
+        "5-1": "₩",
+        "5": 30217100,
+        "6": "저번달 대비"
     },
     "table": {
-        "1": "Top 5 Clients",
-        "2": "Client ID",
-        "3": "Client",
-        "4": "Email",
-        "5": "Recently Offered",
-        "6": "Purchased",
-        "7": "ML Model",
-        "8": "Purchased",
-        "9": "Not Purchased",
-        "10": "Predict"
+        "1": "데이터 카탈로그",
+        "2": "클라이언트 ID",
+        "3": "클라이언트",
+        "4": "이메일",
+        "5": "최근 오퍼한 상품",
+        "6": "구매여부",
+        "7": "머신러닝 모델",
+        "8": "구매",
+        "9": "구매하지 않음",
+        "10": "예측하기"
     },
     "client": {
-        "1": "Catherine Wood",
-        "2": "Justin Purvis",
-        "3": "Jason Farrar",
-        "4": "Alison Sevilla",
-        "5": "Lisa Burkholder",
-        "1e": "cat.wood2@gmail.com",
-        "2e": "justin3049@yahoo.com",
-        "3e": "jfarrar941@gmail.com",
-        "4e": "allison0302@yahoo.com",
-        "5e": "burkhol39@gmail.com"
+        "1": "정한결",
+        "2": "정유리",
+        "3": "신승헌",
+        "4": "표경택",
+        "5": "최나영",
+        "1e": "ssjhk2930@naver.com",
+        "2e": "yuri.jeong29@gmail.com",
+        "3e": "shs39010@naver.com",
+        "4e": "ppyo1020@gmail.com",
+        "5e": "nychoi50@naver.com"
     },
     "product": {
-        "1": "Mortgage Insurance",
-        "2": "Savings Insurance",
-        "3": "Pension Insurance",
-        "4": "Child Insurance",
-        "5": "Retirement Care Insurance"
+        "1": "주택담보",
+        "2": "저축보험",
+        "3": "연금보험",
+        "4": "자녀보험",
+        "5": "노후간병보험"
     },
     "piechart": {
-        "1": "Total Revenue by Products",
-        "2": "$321",
-        "3": "$295",
-        "4": "$227",
-        "5": "$258",
-        "6": "$303"
-    },
-    "charts": {
-        "1": "Number of Offers",
-        "2": "% of Products Purchased",
-        "3": "Product Offer Opportunity",
-        "4": "3 Potential Client(s)",
-        "5": "6 Potential Client(s)",
-        "6": "1 Potential Client(s)",
-        "7": "8 Potential Client(s)",
-        "8": "11 Potential Client(s)"
+        "1": "2021년 탑 5 클라이언트",
+        "2": "32,000,000원",
+        "3": "29,000,000원",
+        "4": "27,000,000원",
+        "5": "58,000,000원",
+        "6": "31,000,000원"
+   },
+   "charts": {
+       "1": "보험상품 오퍼",
+       "2": "보험상품 구매 비율",
+       "3": "보험상품 오퍼 기회",
+       "4": "3 잠재 고객(명)",
+       "5": "6 잠재 고객(명)",
+       "6": "1 잠재 고객(명)",
+       "7": "8 잠재 고객(명)",
+       "8": "11 잠재 고객(명)"
     },
     "clientInfo": {
-        "1": "Personal Information",
+        "1": "개인 정보",
         "2": "Customer ID:",
-        "3": "Age:",
-        "4": "Marital Status:",
-        "5": "Address:",
-        "6": "Profession:",
-        "7": "Level of Education",
-        "8": "Preferred form of Communication",
-        "9": "Financial Profile",
-        "10": "Annual Income:",
-        "11": "Home Owner:",
-        "12": "Monthly Housing:",
-        "13": "Credit Score:",
-        "14": "Credit Authority Level:",
-        "15": "Customer Pursuit:"
+        "3": "나이:",
+        "4": "결혼 여부:",
+        "5": "주소:",
+        "6": "직업:",
+        "7": "최종 학력",
+        "8": "선호 연락수단",
+        "9": "재정 프로필",
+        "10": "연봉:",
+        "11": "자가 보유:",
+        "12": "월세:",
+        "13": "신용 점수:",
+        "14": "신용 등급:",
+        "15": "관심 종목:"
     }
 }

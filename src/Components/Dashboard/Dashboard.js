@@ -4,7 +4,7 @@ import { DashboardWrap, DashboardTitle, BoxInfo, BoxItem, BoxTrend, TopFive, Das
 import { ArrowDownward, ArrowUpward, Person, ShowChart, QuestionAnswer, Assignment } from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
 import { Stop } from '@material-ui/icons'
-import { Pie, Bar } from 'react-chartjs-2'
+import { Pie, Bar, Radar } from 'react-chartjs-2'
 import { Link } from 'react-router-dom'
 import CountUp from 'react-countup'
 
@@ -266,7 +266,7 @@ export class Dashboard extends Component {
                     <Graphs>
                         <BarGraph>
                             <thead>
-                                <caption>2021년 생산량</caption>
+                                <caption>2021년 제품 생산량</caption>
                                 <tr>
                                     <th>
                                     <Bar
@@ -292,78 +292,72 @@ export class Dashboard extends Component {
                         </BarGraph>
                         <BarGraph>
                             <thead>
-                                <caption>{t('charts.2')}</caption>
+                                <caption>2021년 4분기 공장별 데이터</caption>
                                 <tr>
                                     <th>
-                                    <Bar
-                                        data = {{labels: ["7월", "8월", "9월", "10월", "11월"],
-                                                datasets: [{data: [38, 63, 27, 85, 72],
-                                                            barThickness: 40,
-                                                            backgroundColor: ['#FFC107']}]}}
-                                        options = {{ plugins: {
-                                                        legend: {
-                                                            display: false
-                                                        },
-                                                        tooltip: {
-                                                            callbacks: {
-                                                                label: function(context) {
-                                                                    var label = context.dataset.label || '';
-                                                                    label += new Intl.NumberFormat('en-US', { style: 'percent' }).format(context.parsed.y/100);
-                                                                    return label;
+                                    <Radar
+                                        data = {{labels: ["공장A-NDU31021", "공장A-PWU332B1", "공장B-AZQ78S21", "공장B-DZU51B68", "공장C-LSZ36Y12", "공장C-EAB7913N"],
+                                                datasets: [{data: [80, 71, 68, 71, 69, 82],
+                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                                    borderColor: 'rgb(54, 162, 235)',
+                                                    pointBackgroundColor: 'rgb(54, 162, 235)',
+                                                    pointBorderColor: '#fff',
+                                                    pointHoverBackgroundColor: '#fff',
+                                                    pointHoverBorderColor: 'rgb(54, 162, 235)'}]}}
+                                                            options = {{ plugins: {
+                                                                legend: {
+                                                                    display: false
                                                                 }
-                                                            }
-                                                        }
-                                                    },
-                                                    scales: {
-                                                        y: {
-                                                            suggestedMax: 100,
-                                                            ticks: {
-                                                               callback: function(value) {
-                                                                 return value+"%"
-                                                               }
-                                                            }
-                                                        }
-                                                    }
-                                                  }}
-                                        labels = {{ render: 'value'}}
-                                        />
+                                                            },
+                                                            scales: {
+                                                                r: {
+                                                                    angleLines: {
+                                                                        display: false
+                                                                    },
+                                                                    suggestedMin: 50,
+                                                                    suggestedMax: 90
+                                                                }
+                                                            },
+                                                            maintainAspectRatio: false
+                                                          }}
+                                                />
                                     </th>
                                 </tr>
                             </thead>
                         </BarGraph>
                         <BarGraph>
                             <thead>
-                                <caption>{t('charts.3')}</caption>
+                                <caption>2021년 4분기 제품별 인벤토리</caption>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p>{t('product.1')}</p>
-                                        <Potential>{t('charts.4')}</Potential>
+                                        SILTRON-BGA293-C-TR
+                                        <Potential>2076 Qty</Potential>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                       {t('product.2')}
-                                       <Potential>{t('charts.5')}</Potential>
+                                        SILTRON-BGA293-C-TY
+                                       <Potential>3215 Qty</Potential>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        {t('product.3')}
-                                        <Potential>{t('charts.6')}</Potential>
+                                        SILTRON-BGA293-I-TR
+                                        <Potential>5512 Qty</Potential>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        {t('product.4')}
-                                        <Potential>{t('charts.7')}</Potential>
+                                        SILTRON-BGA293-C-TY
+                                        <Potential>379 Qty</Potential>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        {t('product.5')}
-                                        <Potential>{t('charts.8')}</Potential>
+                                        SILTRON-QFP293-C-TY
+                                        <Potential>1150 Qty</Potential>
                                     </td>
                                 </tr>
                               
