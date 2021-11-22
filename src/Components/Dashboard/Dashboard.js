@@ -139,30 +139,22 @@ export class Dashboard extends Component {
                             <tbody>
                                 <td>
                                     <CatalogWrapper>
-                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(33%)" }}>
                                             <CatalogItem>
-                                                <CatalogPicture src={require('../../images/factory.svg').default} alt='factory'/>
+                                                <CatalogPicture src={require('../../images/customer.svg').default} alt='factory'/>
                                                 <CatalogName>고객 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
-                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(33%)" }}>
                                             <CatalogItem>
-                                            asdf
+                                                <CatalogPicture src={require('../../images/factory.svg').default} alt='factory'/>
+                                                <CatalogName>공장 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
-                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
+                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(33%)" }}>
                                             <CatalogItem>
-                                            asdf
-                                            </CatalogItem>
-                                        </Link>
-                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
-                                            <CatalogItem>
-                                            asdf
-                                            </CatalogItem>
-                                        </Link>
-                                        <Link to="catalog" style={{ textDecoration: "none", width: "calc(20%)" }}>
-                                            <CatalogItem>
-                                            asdf
+                                                <CatalogPicture src={require('../../images/analysis.svg').default} alt='factory'/>
+                                                <CatalogName>분석 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
                                     </CatalogWrapper>

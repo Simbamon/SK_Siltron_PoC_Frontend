@@ -169,3 +169,8 @@ export const ReviewAmounts = styled.p`
         cursor: pointer;
     }
 `
+
+export const TableBottom = styled.div`
+    display: flex;
+    justify-content: space-between;
+`

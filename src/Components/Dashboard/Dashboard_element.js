@@ -106,13 +106,13 @@ export const DashboardTable = styled.table`
     td  {
         padding: 5px 20px;
         height: 45px;
-        border-bottom: 1px solid #c8c8c8;
     }
     
 `
 
 export const CatalogWrapper = styled.div`
     display: flex;
+    margin-bottom :5px;
 `
 
 export const CatalogItem = styled.div`
@@ -128,6 +128,7 @@ export const CatalogItem = styled.div`
 export const CatalogPicture = styled.img`
     max-width: 90%;
     min-height: 150px;
+    max-height: 150px;
     
     &:hover {
         transition: all 0.3s ease-out;
@@ -138,8 +139,9 @@ export const CatalogPicture = styled.img`
 export const CatalogName = styled.h1`
     font-size: 1rem;
     font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
 `
 
 export const Client = styled.div`
