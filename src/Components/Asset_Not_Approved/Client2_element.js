@@ -47,9 +47,9 @@ export const AssetTitleCatalogName = styled.p`
     
 `
 
-export const RequestButton = styled.button`
+export const RequestNotButton = styled.button`
 
-    background: grey;
+    background: #0062FF;
     white-space: nowrap;
     color: #fff;
     height: 35px;
@@ -63,7 +63,7 @@ export const RequestButton = styled.button`
     &:hover {
         transition: all 0.3s ease-out;
         border: none;
-        background: grey;
+        background: #0245b0;
     }
 
 `

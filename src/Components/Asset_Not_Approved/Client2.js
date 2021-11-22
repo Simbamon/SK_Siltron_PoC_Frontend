@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestButton, AbtData, AssetTitleCatalogName,
+import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestNotButton, AbtData, AssetTitleCatalogName,
     InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable,
     ColumnInfoTable} from './Client2_element'
 
@@ -144,7 +144,7 @@ export class Client2 extends Component {
                                 {this.state.basic_info.name}
                                 <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
                             </AssetTitleh1>
-                            <RequestButton>사용 신청</RequestButton>
+                            <RequestNotButton>사용 신청</RequestNotButton>
                         </div>
                         <p>{this.state.basic_info.description}</p> 
                     </AssetTitleWrapper>
