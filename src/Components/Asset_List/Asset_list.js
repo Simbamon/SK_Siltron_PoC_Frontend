@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AssetListDiv, AssetListTop, FilterBox, SearchBar, CatalogName, AssetListTable, ReviewAmounts, SortBy, SortByBox,
-         AssetName, AssetTitleCatalogName, AssetSummary, DataType, AssetOwner, AssetOwnerName, LastUpdated,
-         TableBottom} from './Asset_list_element'
+         AssetName, AssetTitleCatalogName, AssetSummary, DataType, AssetOwner, AssetOwnerName, LastUpdated, 
+         TableBottom, ListNumber, PrevNextList, TableNumberList} from './Asset_list_element'
 import { Search, Storage, ExpandMore } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
@@ -157,8 +157,12 @@ export class Asset_list extends Component {
                     )}
 
                     <TableBottom>
-                        <div>adfdsaf</div>
-                        <div>adfdsaf</div>
+                        <p style = {{fontSize: "0.9rem"}}>총 {this.state.total_number_of_asset}건 중 {this.state.total_number_of_asset}건의 데이터를 보여줌</p>
+                        <ListNumber>
+                            <PrevNextList>이전</PrevNextList>
+                            <TableNumberList>1</TableNumberList>
+                            <PrevNextList>다음</PrevNextList>
+                        </ListNumber>
                     </TableBottom>
                 </AssetListDiv>
             </>

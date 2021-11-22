@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SideBar, SidebarWrapper, SidebarList, SidebarListItem, ProfileSection, ProfilePic } from './Sidebar_element'
-import { Dashboard, AssignmentInd, DesktopMac, KeyboardArrowRight } from '@material-ui/icons'
+import { Dashboard, AssignmentInd, DesktopMac, KeyboardArrowRight, Cloud , BarChart} from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom'
 
@@ -35,7 +35,7 @@ export class Sidebar extends Component {
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
                                             <AssignmentInd style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            {t('sidebar.2')}
+                                            클라이언트 목록
                                         </div>
                                         <KeyboardArrowRight />
                                     </SidebarListItem>
@@ -44,12 +44,29 @@ export class Sidebar extends Component {
                                     <SidebarListItem to="/prediction">
                                         <div style= {{display: "flex", alignItems: "center"}}>
                                             <DesktopMac style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            {t('sidebar.3')}
+                                            서버 모니터링
                                         </div>
                                         <KeyboardArrowRight />
                                     </SidebarListItem>
                                 </Link>
-                                
+                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
+                                    <SidebarListItem>
+                                        <div style= {{display: "flex", alignItems: "center"}}>
+                                            <Cloud style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                            IBM Cloud Pak for Data
+                                        </div>
+                                        <KeyboardArrowRight />
+                                    </SidebarListItem>
+                                </Link>
+                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
+                                    <SidebarListItem>
+                                        <div style= {{display: "flex", alignItems: "center"}}>
+                                            <BarChart style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                            Tableau 분석
+                                        </div>
+                                        <KeyboardArrowRight />
+                                    </SidebarListItem>
+                                </Link>
             
                             </SidebarList>
                     </SidebarWrapper>

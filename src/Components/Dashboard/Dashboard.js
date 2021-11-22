@@ -54,13 +54,13 @@ export class Dashboard extends Component {
                                 <div style={{margin: "0 0 0 5px"}}>
                                     <p style={{fontSize: "0.85rem", color: "grey", lineHeight: "0.85rem"}}>{t('dashboard.2')}</p>
                                     <h1 style={{fontSize: "1.7rem", margin: "7px 0px 7px 0px"}}>
-                                        {t('dashboard.5-1')}
                                         <CountUp 
                                             start={t('dashboard.5')*0.75}
                                             end={t('dashboard.5')}
                                             duration ={0.9}
                                             separator=","
                                         />
+                                        {t('dashboard.5-1')}
                                         </h1>
                                     <div style={{display: "flex", alignItems: "center"}}>
                                         <BoxTrend style={{backgroundColor: "lightblue"}}>

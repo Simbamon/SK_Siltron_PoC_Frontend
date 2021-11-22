@@ -173,4 +173,23 @@ export const ReviewAmounts = styled.p`
 export const TableBottom = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
+`
+
+export const ListNumber = styled.div`
+    display: flex;
+`
+
+export const PrevNextList = styled.div`
+    padding: 8px;
+    color: grey;
+`
+
+export const TableNumberList = styled.div`
+    background-color: #1c6387;
+    color: white;
+    padding: 8px;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
 `

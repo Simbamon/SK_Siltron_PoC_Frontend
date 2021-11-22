@@ -118,7 +118,7 @@ export const Dates = styled.p`
 
 export const AbtTable = styled.table`
     //Change here for size
-    width: 700px;
+    width: 800px;
     font-size: 0.95rem;
     color: #222222;
     border-collapse: collapse;
