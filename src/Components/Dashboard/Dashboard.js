@@ -148,13 +148,13 @@ export class Dashboard extends Component {
                                         <Link to="catalog" style={{ textDecoration: "none", width: "calc(33%)" }}>
                                             <CatalogItem>
                                                 <CatalogPicture src={require('../../images/factory.svg').default} alt='factory'/>
-                                                <CatalogName>공장 데이터</CatalogName>
+                                                <CatalogName>생산/출하 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
                                         <Link to="catalog" style={{ textDecoration: "none", width: "calc(33%)" }}>
                                             <CatalogItem>
                                                 <CatalogPicture src={require('../../images/analysis.svg').default} alt='factory'/>
-                                                <CatalogName>분석 데이터</CatalogName>
+                                                <CatalogName>품질 데이터</CatalogName>
                                             </CatalogItem>
                                         </Link>
                                     </CatalogWrapper>
@@ -174,7 +174,7 @@ export class Dashboard extends Component {
                                     <th>
                                     <Pie
                                         data ={{labels: ["삼성전자", "인텔", "AMD", "Qualcomm", "엔비디아"],
-                                                datasets: [{data: [10, 6, 5, 6, 7],
+                                                datasets: [{data: [25, 21, 16, 12, 11],
                                                 backgroundColor: ['#00A6FF', '#28A745', '#DC3545', '#FFC107', '#8107FF']}]}}
                                         options={{plugins: {
                                                         legend: {

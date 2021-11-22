@@ -78,7 +78,7 @@ export class Asset_list extends Component {
                         <CatalogName>{this.state.catalog_name}</CatalogName>
                         <div style={{ display: "table" }}>
                             <SearchBar>
-                                <p style={{paddingLeft: "5px", color: "grey"}}>원하는 데이터를 입력하세요</p>
+                                <p style={{paddingLeft: "5px", color: "grey"}}>원하는 데이터를 입력하세요 (비지니스 텀, 태그로도 검색 가능)</p>
                             </SearchBar>
                             <div style={{display: "table-cell", verticalAlign: "middle", backgroundColor: "#25292C", margin:"0px", width: "3%", cursor: "pointer"}}>
                                 <Search style = {{color: "white", fontSize: "2rem", margin: "auto"}} />

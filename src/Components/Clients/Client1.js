@@ -213,11 +213,10 @@ export class Client1 extends Component {
                                     <tr>
                                         <td>비즈니스 용어</td>
                                         <td>
-                                            아래를 비즈니스 텀 추가할껏
-                                            {/* {this.state.data_business_term.map((bizTerm, index) => 
+                                            {this.state.data_business_term.map((bizTerm, index) => 
                                             <span key={index}>
                                                 <span>{ (index ? ', ' : '') + bizTerm.term_display_name}</span>
-                                            </span>)} */}
+                                            </span>)}
                                         </td>
                                     </tr>
                                     <tr>

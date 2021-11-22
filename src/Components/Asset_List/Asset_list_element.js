@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const AssetListDiv = styled.div`
     background: white;
-    padding: 0.5rem calc((100vw - 1350px) / 2);
+    padding: 0.5rem calc((100vw - 1300px) / 2);
     //Padding to resize the window
 `
 export const AssetListTop = styled.div`

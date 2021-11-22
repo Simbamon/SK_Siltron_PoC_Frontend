@@ -139,8 +139,8 @@ export const CatalogPicture = styled.img`
 export const CatalogName = styled.h1`
     font-size: 1rem;
     font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     color: black;
 `
 

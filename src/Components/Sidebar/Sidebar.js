@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SideBar, SidebarWrapper, SidebarList, SidebarListItem, ProfileSection, ProfilePic } from './Sidebar_element'
-import { Dashboard, AssignmentInd, DesktopMac, KeyboardArrowRight, Cloud , BarChart} from '@material-ui/icons'
+import { Dashboard, AssignmentInd, DesktopMac, KeyboardArrowRight, Cloud , BarChart, Settings} from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom'
 
@@ -34,24 +34,6 @@ export class Sidebar extends Component {
                                 <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
-                                            <AssignmentInd style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            클라이언트 목록
-                                        </div>
-                                        <KeyboardArrowRight />
-                                    </SidebarListItem>
-                                </Link>
-                                <Link to="/prediction" style={{ textDecoration: 'none', color: '#555' }}>
-                                    <SidebarListItem to="/prediction">
-                                        <div style= {{display: "flex", alignItems: "center"}}>
-                                            <DesktopMac style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            서버 모니터링
-                                        </div>
-                                        <KeyboardArrowRight />
-                                    </SidebarListItem>
-                                </Link>
-                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
-                                    <SidebarListItem>
-                                        <div style= {{display: "flex", alignItems: "center"}}>
                                             <Cloud style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
                                             IBM Cloud Pak for Data
                                         </div>
@@ -67,6 +49,34 @@ export class Sidebar extends Component {
                                         <KeyboardArrowRight />
                                     </SidebarListItem>
                                 </Link>
+                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
+                                    <SidebarListItem>
+                                        <div style= {{display: "flex", alignItems: "center"}}>
+                                            <AssignmentInd style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                            사용자 권한 관리
+                                        </div>
+                                        <KeyboardArrowRight />
+                                    </SidebarListItem>
+                                </Link>
+                                <Link to="/prediction" style={{ textDecoration: 'none', color: '#555' }}>
+                                    <SidebarListItem to="/prediction">
+                                        <div style= {{display: "flex", alignItems: "center"}}>
+                                            <DesktopMac style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                            시스템 관리
+                                        </div>
+                                        <KeyboardArrowRight />
+                                    </SidebarListItem>
+                                </Link>
+                                <Link to="/prediction" style={{ textDecoration: 'none', color: '#555' }}>
+                                    <SidebarListItem to="/prediction">
+                                        <div style= {{display: "flex", alignItems: "center"}}>
+                                            <Settings style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                            사내 결재 시스템
+                                        </div>
+                                        <KeyboardArrowRight />
+                                    </SidebarListItem>
+                                </Link>
+                                
             
                             </SidebarList>
                     </SidebarWrapper>
