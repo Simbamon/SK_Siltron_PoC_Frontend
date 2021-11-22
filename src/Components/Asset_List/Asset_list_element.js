@@ -76,6 +76,13 @@ export const AssetListTable = styled.table`
     
 `
 
+export const ApprovedText = styled.p`
+    color: #528AEF;
+    font-size: 0.7rem;
+    margin-top: auto;
+    margin-bottom: auto;
+`
+
 export const AssetName = styled.p`
     color: #1c6387;
     font-weight: bold;

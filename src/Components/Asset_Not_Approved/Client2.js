@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestButton, AbtData, AssetTitleCatalogName,
     InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable,
-    ColumnInfoTable, ApprovedText} from './Client_element'
-import { CheckCircle } from '@material-ui/icons'
+    ColumnInfoTable} from './Client2_element'
 
-export class Client1 extends Component {
+export class Client2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -144,8 +143,6 @@ export class Client1 extends Component {
                             <AssetTitleh1>
                                 {this.state.basic_info.name}
                                 <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
-                                <CheckCircle style = {{paddingRight: "2px", paddingLeft: "10px", color: "#528AEF", fontSize: "1.1rem", marginTop: "auto", marginBottom: "auto"}} />
-                                <ApprovedText>사용 승인</ApprovedText>
                             </AssetTitleh1>
                             <RequestButton>사용 신청</RequestButton>
                         </div>
@@ -324,4 +321,4 @@ export class Client1 extends Component {
     }
 }
 
-export default Client1
+export default Client2
