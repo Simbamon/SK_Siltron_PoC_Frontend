@@ -23,8 +23,8 @@ export class Client1 extends Component {
             last_update_time: null,
             last_access_time: null,
             create_time: null,
-            catalog_name: null
-
+            catalog_name: null,
+            asset_preview: null
         };
     }
 
@@ -133,6 +133,11 @@ export class Client1 extends Component {
         // console.log(asset_meta)
         this.setState({reviews: review_package})
         // console.log(review_package)
+
+        const data_preview_info = await fetch('/getassetdata')
+        const data_asset_preview = await data_preview_info.json()
+        console.log(data_asset_preview)
+    
     }
     
     render() {
@@ -282,10 +287,6 @@ export class Client1 extends Component {
                             
                         </tbody>
                     </ColumnInfoTable>
-
-
-
-
 
 
 
