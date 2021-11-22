@@ -107,8 +107,8 @@ export class Dashboard extends Component {
                                     <p style={{fontSize: "0.85rem", color: "grey", lineHeight: "0.85rem"}}>{t('dashboard.4')}</p>
                                     <h1 style={{fontSize: "1.7rem", margin: "7px 0px 7px 0px"}}>
                                         <CountUp 
-                                            start={1521*0.75}
-                                            end={1521}
+                                            start={11321*0.75}
+                                            end={11321}
                                             duration ={0.9}
                                             separator=","
                                         />
