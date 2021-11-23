@@ -134,9 +134,9 @@ export class Client1 extends Component {
         this.setState({reviews: review_package})
         // console.log(review_package)
 
-        const data_preview_info = await fetch('/getassetdata')
-        const data_asset_preview = await data_preview_info.json()
-        console.log(data_asset_preview)
+        // const data_preview_info = await fetch('/getassetdata')
+        // const data_asset_preview = await data_preview_info.json()
+        // console.log(data_asset_preview)
     
     }
     
@@ -150,7 +150,7 @@ export class Client1 extends Component {
                                 {this.state.basic_info.name}
                                 <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
                                 <CheckCircle style = {{paddingRight: "2px", paddingLeft: "10px", color: "#528AEF", fontSize: "1.1rem", marginTop: "auto", marginBottom: "auto"}} />
-                                <ApprovedText>사용 승인</ApprovedText>
+                                <ApprovedText>사용 승인 완료</ApprovedText>
                             </AssetTitleh1>
                             <RequestButton>사용 신청</RequestButton>
                         </div>
@@ -220,11 +220,11 @@ export class Client1 extends Component {
                                 <tbody>
                                     <tr>
                                         <td>비즈니스 용어</td>
-                                        <td>asdfas
-                                            {/* {this.state.data_business_term.map((bizTerm, index) => 
+                                        <td>
+                                            {this.state.data_business_term.map((bizTerm, index) => 
                                             <span key={index}>
                                                 <span>{ (index ? ', ' : '') + bizTerm.term_display_name}</span>
-                                            </span>)} */}
+                                            </span>)}
                                         </td>
                                     </tr>
                                     <tr>

@@ -68,14 +68,11 @@ export const RequestNotButton = styled.button`
 
 `
 
-export const ApprovedMark = styled.div`
-
-`
-
-export const ApprovedCircle = styled.div`
-    background-color: #F1F1F1;
-    border-radius: 50%;
-
+export const NotApprovedText = styled.p`
+    color: #F64A7A;
+    font-size: 0.9rem;
+    margin-top: auto;
+    margin-bottom: auto;
 `
 
 export const InfoText = styled.h1`

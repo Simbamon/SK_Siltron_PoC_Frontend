@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {AssetDiv, AssetTitle,AssetTitleWrapper, AssetTitleh1, RequestNotButton, AbtData, AssetTitleCatalogName,
-    InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable,
-    ColumnInfoTable} from './Client2_element'
+    InfoText, AbtSection, UpdateSection, DateDescription, Dates, AbtInfoSection, AbtTable, ColumnInfoTable,
+    NotApprovedText} from './Client2_element'
+import { Cancel } from '@material-ui/icons'
 
 export class Client2 extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ export class Client2 extends Component {
         
         const catalog_info_response = await fetch('/getcataloginfo')
         const catalog_info = await catalog_info_response.json()
-        const meta_response = await fetch('/getassetmeta')
+        const meta_response = await fetch('/getassetmeta2')
         const data_meta = await meta_response.json()
         
         const catalog_name = catalog_info.entity.name
@@ -103,7 +104,7 @@ export class Client2 extends Component {
                         connection_source_type: connection_source_type})
         
 
-        const review_response= await fetch('/getassetreview')
+        const review_response= await fetch('/getassetreview2')
         const data = await review_response.json()
         const review_array = await data.resources
         
@@ -143,6 +144,8 @@ export class Client2 extends Component {
                             <AssetTitleh1>
                                 {this.state.basic_info.name}
                                 <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
+                                <Cancel style = {{paddingRight: "2px", paddingLeft: "10px", color: "#F64A7A", fontSize: "0.9rem", marginTop: "auto", marginBottom: "auto"}} />
+                                <NotApprovedText>사용 승인 필요</NotApprovedText>
                             </AssetTitleh1>
                             <RequestNotButton>사용 신청</RequestNotButton>
                         </div>
@@ -212,11 +215,11 @@ export class Client2 extends Component {
                                 <tbody>
                                     <tr>
                                         <td>비즈니스 용어</td>
-                                        <td>asdfas
-                                            {/* {this.state.data_business_term.map((bizTerm, index) => 
+                                        <td>
+                                            {this.state.data_business_term.map((bizTerm, index) => 
                                             <span key={index}>
                                                 <span>{ (index ? ', ' : '') + bizTerm.term_display_name}</span>
-                                            </span>)} */}
+                                            </span>)}
                                         </td>
                                     </tr>
                                     <tr>
@@ -245,7 +248,7 @@ export class Client2 extends Component {
                                     </tr>
                                     <tr>
                                         <td>접속 경로</td>
-                                        <td>{this.state.connection_path.connection_path}</td>
+                                        <td>/ADMIN/DV_customer_order_data_csv</td>
                                     </tr>
                                     
                                 </tbody>

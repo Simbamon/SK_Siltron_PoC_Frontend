@@ -17,8 +17,8 @@ function App() {
         <div className="contents">
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/prediction" exact component={Prediction}/>
-          <Route path="/catalog/asset_id=1ae30201adsz1" exact component={Client1} />
-          <Route path="/catalog/asset_id=5ea910zeo2010" exact component={Client2} />
+          <Route path="/catalog/asset_id=1ee6388b-25b2-48b1-9f20-0d144e7275df" exact component={Client1} />
+          <Route path="/catalog/asset_id=7d698965-f2f0-4338-af48-41758dbe87a0" exact component={Client2} />
           <Route path="/catalog" exact component={Asset_list} />
         </div>
       </div>

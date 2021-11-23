@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { AssetListDiv, AssetListTop, FilterBox, SearchBar, CatalogName, AssetListTable, ReviewAmounts, SortBy, SortByBox,
          AssetName, AssetTitleCatalogName, AssetSummary, DataType, AssetOwner, AssetOwnerName, LastUpdated, 
          TableBottom, ListNumber, PrevNextList, ApprovedText, TableNumberList} from './Asset_list_element'
-import { Search, Storage, ExpandMore, CheckCircle } from '@material-ui/icons'
+import { Search, Storage, ExpandMore, CheckCircle, Cancel } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 
@@ -107,19 +107,19 @@ export class Asset_list extends Component {
                         </FilterBox>
                     </AssetListTop>
 
-                    {this.state.asset_list_info.map(info => info.name === "Lab99_마케팅이력_데이터" ? (
+                    {this.state.asset_list_info.map(info => info.name === "SK 실트론 고객 품질 데이터" ? (
                             <div>
                             <AssetListTable>
                                     <tbody>
                                         <tr>
                                             <td>
                                                 <div style={{display: "flex"}}>
-                                                    <Link to="catalog/asset_id=1ae30201adsz1" style={{ textDecoration: 'none' }}>
+                                                    <Link to="catalog/asset_id=1ee6388b-25b2-48b1-9f20-0d144e7275df" style={{ textDecoration: 'none' }}>
                                                         <AssetName>{info.name}</AssetName>
                                                     </Link>
                                                     <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
                                                     <CheckCircle style = {{paddingRight: "2px", paddingLeft: "10px", color: "#528AEF", fontSize: "0.9rem", marginTop: "auto", marginBottom: "auto"}} />
-                                                    <ApprovedText>사용 승인</ApprovedText>
+                                                    <ApprovedText>사용 승인 완료</ApprovedText>
                                                 </div>
                                             </td>
                                             <td>
@@ -163,10 +163,12 @@ export class Asset_list extends Component {
                                         <tr>
                                             <td>
                                                 <div style={{display: "flex"}}>
-                                                    <Link to="catalog/asset_id=5ea910zeo2010" style={{ textDecoration: 'none' }}>
+                                                    <Link to="catalog/asset_id=7d698965-f2f0-4338-af48-41758dbe87a0" style={{ textDecoration: 'none' }}>
                                                         <AssetName>{info.name}</AssetName>
                                                     </Link>
                                                     <AssetTitleCatalogName>{this.state.catalog_name}</AssetTitleCatalogName>
+                                                    <Cancel style = {{paddingRight: "2px", paddingLeft: "10px", color: "#F64A7A", fontSize: "0.9rem", marginTop: "auto", marginBottom: "auto"}} />
+                                                    <ApprovedText style = {{color: "#F64A7A"}}>사용 승인 필요</ApprovedText>
                                                 </div>
                                             </td>
                                             <td>
