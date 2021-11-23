@@ -31,24 +31,23 @@ export class Sidebar extends Component {
                                         <KeyboardArrowRight />
                                     </SidebarListItem>
                                 </Link>
-                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
+                                <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#555' }}>
+                                
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
                                             <Cloud style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            IBM Cloud Pak for Data
+                                            IBM CP4D 바로가기
                                         </div>
-                                        <KeyboardArrowRight />
-                                    </SidebarListItem>
-                                </Link>
-                                <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
+                                    </SidebarListItem>  
+                                </a>
+                                <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#555' }}>
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
                                             <BarChart style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            Tableau 분석
+                                            Tableau 바로가기
                                         </div>
-                                        <KeyboardArrowRight />
                                     </SidebarListItem>
-                                </Link>
+                                </a>
                                 <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
