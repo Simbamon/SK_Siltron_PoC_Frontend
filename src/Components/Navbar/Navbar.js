@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Nav, NavLink, NavMenu, ProfilePic, LogoPic, Profile, ProfileName } from './Navbar_element'
 import { Email, NotificationsNoneOutlined, ExpandMore, Search } from '@material-ui/icons'
 import { withTranslation } from 'react-i18next';
-
+import { Link } from 'react-router-dom'
 
 export class Navbar extends Component {
     render() {
@@ -11,10 +11,14 @@ export class Navbar extends Component {
         return (
             <>
                 <Nav>
-                    <NavLink to="/dashboard">
-                        <LogoPic img = {require('../../images/logo.png').default} alt='Logo'></LogoPic>
-                        <h3 style = {{color: "#d6691e", marginLeft: "7px"}}>데이터 분석 플랫폼</h3>
-                    </NavLink>
+                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                        <NavLink >
+                            <LogoPic img = {require('../../images/logo.png').default} alt='Logo'></LogoPic>
+                            <h3 style = {{color: "#d6691e", marginLeft: "7px"}}>데이터 분석 플랫폼</h3>
+                        </NavLink>
+                    </Link>
+
+                    
                     <NavMenu>
                         <NavLink>
                             <Search style = {{fontSize: "1.35rem"}}/>

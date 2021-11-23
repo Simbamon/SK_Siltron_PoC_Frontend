@@ -6,9 +6,14 @@ import { Link } from 'react-router-dom'
 
 export class Sidebar extends Component {
     render() {
-        const { t } = this.props; 
+        const { t } = this.props;
+        // const handleClick = async() => {
+        //     const data = await fetch('/start')
+        //     console.log(data)
+        // } 
         return (
-            <>
+            <>  
+                
                 <SideBar>
                     <SidebarWrapper>
                             <ProfileSection img = {require('../../images/profile_background.jpg').default} alt='background photo'>
@@ -31,8 +36,7 @@ export class Sidebar extends Component {
                                         <KeyboardArrowRight />
                                     </SidebarListItem>
                                 </Link>
-                                <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#555' }}>
-                                
+                                <a href="/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#555' }}>
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
                                             <Cloud style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
@@ -40,14 +44,19 @@ export class Sidebar extends Component {
                                         </div>
                                     </SidebarListItem>  
                                 </a>
-                                <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#555' }}>
-                                    <SidebarListItem>
-                                        <div style= {{display: "flex", alignItems: "center"}}>
-                                            <BarChart style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
-                                            Tableau 바로가기
-                                        </div>
-                                    </SidebarListItem>
-                                </a>
+                                <SidebarListItem>
+                                    <div style= {{display: "flex", alignItems: "center"}}>
+                                        <BarChart style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                        Tableau 바로가기
+                                    </div>
+                                </SidebarListItem>
+                                {/*This is for local file execution command */}
+                                {/* <SidebarListItem onClick = {handleClick}>
+                                    <div style= {{display: "flex", alignItems: "center"}}>
+                                        <BarChart style = {{paddingRight: "5px", paddingLeft: "10px"}}/>
+                                        Tableau 바로가기
+                                    </div>
+                                </SidebarListItem> */}
                                 <Link to="/client" style={{ textDecoration: 'none', color: '#555' }}>
                                     <SidebarListItem>
                                         <div style= {{display: "flex", alignItems: "center"}}>
